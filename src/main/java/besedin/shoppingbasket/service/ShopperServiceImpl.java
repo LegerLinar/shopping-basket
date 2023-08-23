@@ -28,9 +28,10 @@ public class ShopperServiceImpl implements ShopperService {
     public String addProduct(int[] identities) {
         List<Product> products = new ArrayList<>();
         for (int id : identities) {
-            if(assortment.getAssortment().get(id) != null) {
-                basket.add(assortment.getAssortment().get(id));
-                products.add(assortment.getAssortment().get(id));
+            Product temp = assortment.getAssortment().get(id);
+            if(temp != null) {
+                basket.add(temp);
+                products.add(temp);
             }
             else {
                 throw new IllegalArgumentException("Please, specify the right product id");

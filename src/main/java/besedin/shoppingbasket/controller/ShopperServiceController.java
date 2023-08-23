@@ -38,7 +38,7 @@ public class ShopperServiceController {
         return shopperService.clearBasket();
     }
 
-    @GetMapping(path = "/get-by-id")
+    @GetMapping(path = "/get-all")
     public List<Long> getBasketsId(){
         return shopperService.getBasketsId();
     }
