@@ -8,11 +8,16 @@ public class Product {
     private int value;
     private final long id;
 
+    public long getId() {
+        return id;
+    }
+
     public Product(String name, int price, int value, long id) {
         this.name = name;
         this.price = price;
         this.value = value;
         this.id = id;
+
     }
 
     @Override

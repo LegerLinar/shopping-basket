@@ -20,8 +20,12 @@ public class ShopperServiceController {
     }
 
     @PostMapping(path = "/add")
-    public List<Product> addProduct(@RequestParam int[] productsId) {
-        return shopperService.addProduct(productsId);
+    public String addProduct(@RequestParam int[] productsId) {
+        try {
+            return shopperService.addProduct(productsId);
+        } catch (IllegalAccessError e) {
+            return e.getMessage();
+        }
     }
 
     @GetMapping(path = "/get")
@@ -32,5 +36,10 @@ public class ShopperServiceController {
     @DeleteMapping(path = "/clean")
     public String clearBasket() {
         return shopperService.clearBasket();
+    }
+
+    @GetMapping(path = "/get-by-id")
+    public List<Long> getBasketsId(){
+        return shopperService.getBasketsId();
     }
 }

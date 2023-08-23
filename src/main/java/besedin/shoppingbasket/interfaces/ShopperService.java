@@ -1,14 +1,17 @@
 package besedin.shoppingbasket.interfaces;
 
 import besedin.shoppingbasket.model.Product;
+import io.swagger.v3.oas.models.security.SecurityScheme;
 
 import java.util.List;
 
 public interface ShopperService {
-    public List<Product> addProduct(int[] id);
+    String addProduct(int[] id);
 
-    public List<Product> getBasket();
+    List<Product> getBasket();
 
-    public String clearBasket();
+    String clearBasket();
+
+    List<Long> getBasketsId();
 
 }
